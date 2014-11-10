@@ -7,8 +7,14 @@ class Resource(models.Model):
     resource_link = models.URLField()
     resource_review = models.TextField()
 
+    def __str__(self):
+        return self.resource_title
+
 
 class UserReview(models.Model):
     resource = models.ForeignKey(Resource)
     user_review = models.TextField()
     votes = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.user_review
