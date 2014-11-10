@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Resource(models.Model):
-    resource_title = models.Charfield()
+    resource_title = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     resource_link = models.URLField()
     resource_review = models.TextField()
